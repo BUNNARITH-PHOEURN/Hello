@@ -1,0 +1,81 @@
+@import '../component/variable';
+@import '../component/group-mxin';
+@import '../mixins/responsive';
+
+
+.Pictures-clinic {
+    @include centered;
+    margin: 50px;
+    @include responsive(Tablet){
+         flex-direction: column;
+    }
+   
+    margin-top: 50px;
+
+    .Pictures {
+        display: flex;
+        justify-content: flex-end;
+        flex: 1;
+    }
+
+    .Paragraph {
+        flex: 1;
+        @include responsive(Tablet){
+            flex: 0;
+        }
+        
+        p {
+            width: 50%;
+            margin-top: 25px;
+            @include responsive(Tablet) {
+                width: 100%;
+                margin-top: 10px;
+            }
+        }
+    }
+}
+
+
+
+
+
+/* table */
+
+.table-container {
+    @include responsive(Tablet) {}
+    @include centered;
+    flex-direction: column;
+    margin-top: -30px;
+    width: 100%;
+    h1 {
+        color: $seconaryColor;
+    }
+
+    .color {
+        color: $tablecolor;
+    }
+    background: rgb(49, 49, 81);
+}
+
+table {
+    border-collapse: collapse;
+    text-align: center;
+    margin-top: 20px;
+    height: 60vh;
+    width: 90%;
+    
+
+    thead {
+        height: 10vh;
+    
+    }
+
+    th,
+    td {
+        border: 1px solid $tablecolorblack;
+
+        @include responsive(Tablet) {
+            font-size: 11px;
+        }
+    }
+}

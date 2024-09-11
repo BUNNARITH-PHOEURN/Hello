@@ -1,0 +1,17 @@
+$breakpoint: ( 
+    'mobile': 620px,
+    'Tablet': 730px,
+    'Laptop': 1024px,
+    'Desktop': 1200px,
+);
+
+@mixin responsive($size){
+    @media screen and (max-width: map-get($breakpoint, $size)) {
+        @content;
+    }
+}
+@mixin style-card{
+    transition: 1s;
+    transform: scale(1.0);
+    box-shadow: 2px 2px 10px 2px $mainColor; 
+}

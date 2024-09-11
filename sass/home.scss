@@ -1,0 +1,39 @@
+@import './main';
+@import './content/whyTheyChooseUs';
+@import './content/ourDoctor';
+@import './content/feedback';
+@import './content/MakeAppointment';
+@import "./component/location";
+@import './content/ourcare';
+@import './mixins/responsive';
+
+
+header {
+    background-image: url(/image/img-of-content/banner3.jpg);
+    background-size: cover;
+    height: 400px;
+}
+
+.image {
+    background-color: $mainColor;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+
+    p {
+        font-size: 23px;
+    }
+
+    b {
+        font-size: 70px;
+
+        @include responsive(mobile) {
+            font-size: 60px;
+        }
+    }
+}
+
+

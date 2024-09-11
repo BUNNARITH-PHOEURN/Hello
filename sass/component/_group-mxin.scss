@@ -1,0 +1,22 @@
+@mixin between{
+    display: flex;
+    justify-content: space-between;
+}
+@mixin centered{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin column{
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin margin{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+@mixin centered2{
+    display: flex;
+    justify-content: center;
+}

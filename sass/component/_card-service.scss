@@ -1,0 +1,79 @@
+@import './variable';
+@import './group-mxin';
+@import '../mixins/responsive';
+
+
+// Media Queries breakpoints
+
+
+.card-department {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 340px;
+    margin: 0 auto;
+    @media screen and (min-width: $medium) {
+        max-width: 1200px;
+    }
+}
+
+.card {
+    box-shadow: 5px 1px 5px 5px rgb(205, 203, 203);
+    margin-top: 50px;
+    position: relative;
+    flex: 1 1 100%;
+    margin: 31px 0;
+    padding: $card-padding;
+    background: lighten(#f8f8f8, 3%);
+    
+    @media screen and (min-width: $small) {
+        flex-basis: calc(33.33% - (#{$grid-gutter * 2} + #{$card-padding * 2}));
+        margin: 0 $grid-gutter;
+    }
+}
+
+.card__thumb {
+    overflow: hidden;
+}
+
+.card__img {
+    margin: (-$card-padding) (-$card-padding) 0;
+
+    img {
+        max-width: 100%;
+        height: auto;
+        border: 0;
+        box-sizing: border-box;
+    }
+}
+
+
+.card__one {
+    transition: transform .5s;
+    margin-top: 50px;
+
+    &::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: opacity 2s cubic-bezier(.165, .84, .44, 1);
+        box-shadow: 0 8px 17px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, .15);
+        content: '';
+        opacity: 0;
+        z-index: -1;
+
+    }
+
+    &:hover,
+    &:focus {
+        transform: scale3d(1.006, 1.006, 1);
+
+        &::after {
+            opacity: 1;
+        }
+    }
+}
+
+

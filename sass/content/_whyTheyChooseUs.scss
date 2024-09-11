@@ -1,0 +1,84 @@
+@import '../component/variable';
+@import '../component/group-mxin';
+@import '../mixins/responsive';
+
+.card-container {
+    display: flex;
+
+    margin-left: 50px;
+    justify-content: center;
+    gap: 20px;
+    @include margin;
+    margin-top: -60px;
+    width: 100%;
+
+    @include responsive(Tablet) {
+        flex-wrap: wrap;
+
+    }
+
+    .card:nth-child(4) {
+        margin-right: 100px;
+
+        @include responsive(Tablet) {
+            margin-right: 50px;
+
+        }
+    }
+
+    .card {
+        width: 370px;
+        height: 350px;
+        background-color: white;
+        border-radius: 15px;
+        border: 1px solid darkblue;
+
+        @include responsive(Tablet) {
+            margin-right: 50px;
+
+        }
+
+
+        .card-header {
+            height: 120px;
+            @include centered;
+
+            .card-header-style {
+                background: #aeacac;
+                width: 70px;
+                height: 60%;
+                border-radius: 100%;
+                @include centered;
+
+                i {
+                    font-size: 35px;
+                    color: darkblue;
+                }
+
+            }
+        }
+    }
+
+    .card-footer {
+        h4 {
+            text-align: center;
+            margin-top: $marginTen;
+            margin-bottom: 25px;
+            margin-left: $marginTen;
+            margin-right: $marginTen;
+        }
+
+        p {
+            text-align: center;
+            margin-left: $marginTen;
+            margin-right: $marginTen;
+        }
+    }
+}
+
+
+
+
+
+
+
